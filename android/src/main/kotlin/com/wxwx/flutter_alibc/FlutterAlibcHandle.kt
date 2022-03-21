@@ -7,7 +7,7 @@ import android.webkit.WebChromeClient
 import android.webkit.WebViewClient
 import com.alibaba.baichuan.android.trade.AlibcTrade
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK
-import com.alibaba.baichuan.android.trade.callback.AlibcTradeCallback
+import com.alibaba.baichuan.trade.biz.AlibcTradeCallback
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams
 import com.alibaba.baichuan.android.trade.page.AlibcBasePage
@@ -293,6 +293,6 @@ class FlutterAlibcHandle(var methodChannel: MethodChannel?){
     }
 
     fun useAlipayNative(call: MethodCall) {
-        AlibcTradeSDK.setShouldUseAlipay(call.argument<Boolean>("isNeed")!!)
+//        AlibcTradeSDK.setShouldUseAlipay(call.argument<Boolean>("isNeed")!!)
     }
 }
