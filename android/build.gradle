@@ -7,10 +7,24 @@ buildscript {
         google()
         jcenter()
         maven { url "http://download.flutter.io" }
-        maven{ url 'https://maven.aliyun.com/repository/google'}
-//        maven {
-//            url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/"
-//        }
+        maven { url "http://download.flutter.io" }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            credentials {
+                username '5fffbbd595a53539a756467f'
+                password '8tDN(C3Roogl'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2066545-release-mGPJo8/'
+        }
+        maven {
+            credentials {
+                username '5fffbbd595a53539a756467f'
+                password '8tDN(C3Roogl'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2066545-snapshot-1HyPdz/'
+        }
     }
 
     dependencies {
@@ -24,10 +38,23 @@ rootProject.allprojects {
         google()
         jcenter()
         maven { url "http://download.flutter.io" }
-        maven{ url 'https://maven.aliyun.com/repository/google'}
-//        maven {
-//            url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/"
-//        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            credentials {
+                username '5fffbbd595a53539a756467f'
+                password '8tDN(C3Roogl'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2066545-release-mGPJo8/'
+        }
+        maven {
+            credentials {
+                username '5fffbbd595a53539a756467f'
+                password '8tDN(C3Roogl'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2066545-snapshot-1HyPdz/'
+        }
     }
 }
 
@@ -49,33 +76,31 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.alibaba:fastjson:1.2.52'
-    //security
-//    implementation 'com.taobao.android:securityguardaar3:5.4.171@aar'
-//    implementation 'com.taobao.android:securitybodyaar3:5.4.99@aar'
-//    implementation 'com.taobao.android:avmpaar3:5.4.36@aar'
-//    implementation 'com.taobao.android:sgmiddletieraar3:5.4.9@aar'
 
-    //mtop
-//    implementation 'com.taobao.android:mtopsdk_allinone_open:3.1.2.5@jar'
+    //登陆
+    implementation 'com.ali.auth.third:core:2.0.0.6'
+    implementation 'com.ali.auth.third.ui:ui:2.0.0.6'
+    implementation 'com.ali.member.third:ext:2.0.0.6'
+    //安全组件
+    implementation 'com.alibaba.wireless.security:securityguardaar3:5.4.171'
+    implementation 'com.alibaba.wireless.security.open.middletier:securitybodyaar3:5.4.99'
 
-    //appLink
-//    implementation 'com.alibaba.sdk.android:alibc_link_partner:4.1.15@aar'
 
-    //core
-//    implementation 'com.alibaba.sdk.android:AlibcTradeCommon:4.0.0.16@aar'
-//    implementation 'com.alibaba.sdk.android:AlibcTradeBiz:4.0.0.16@aar'
-//    implementation 'com.alibaba.sdk.android:nb_trade:4.0.0.16@aar'
+    implementation 'avmpaar3:avmpaar3:1'
+    implementation 'sgmiddletieraar3:sgmiddletieraar3:1.0'
 
-    //login
-//    implementation 'com.ali.auth.sdk:alibabauth_core:2.0.0.11@aar'
-//    implementation 'com.ali.auth.sdk:alibabauth_ui:2.0.0.11@aar'
-//    implementation 'com.ali.auth.sdk:alibabauth_ext:2.0.0.11@aar'
-
-    //ut
-//    implementation 'com.taobao.android:utdid4all:1.5.2'
-//    implementation 'com.alibaba.mtl:app-monitor-sdk:2.6.4.5_for_bc'
+    //Mtop（jar包远端依赖）
+    implementation 'mtopsdk_allinone_open:mtopsdk_allinone_open:1.0'
+    //applink
+    implementation 'alibc_link_partner:alibc_link_partner:1.0'
+    //ut（jar包远端依赖）
+    implementation 'utdid4all:utdid4all:1.0'
+    implementation 'app-monitor-sdk:app-monitor-sdk:1.0'
+    // 电商基础组件
+    implementation 'AlibcTradeCommon:AlibcTradeCommon:1.0'
+    implementation 'AlibcTradeBiz:AlibcTradeBiz:1.0'
+    implementation 'nb_trade:nb_trade:1.0'
 }
